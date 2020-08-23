@@ -62,10 +62,27 @@
         right: 0,
         bottom: 0,
         left: 0
-      }  
+      },
+
+      toolbar: {
+        show: true,
+        offsetX: 0,
+        offsetY: 0,
+        tools: {
+          download: false,
+          selection: false,
+          zoom: false,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+          reset: true | '<img src="/static/icons/reset.png" width="20">',
+          customIcons: []
+        },
+        autoSelected: 'pan' 
+      },
     },
     series: [{
-    name: 'Deaths',
+    name: 'Cases',
     data: [
 
     <?php  
@@ -95,15 +112,34 @@
     <?php  } ?>
     ]
   }],
-
+  
     xaxis: {
-      type: 'datetime'
+      type: 'datetime',
+      labels: {
+        style: {
+            colors: '#C0C0C0',
+            fontWeight: 'normal',
+            fontSize: '0.7em',
+        },
+        offsetY: 5,
+      }
     },   
+    yaxis: {
+      labels: {
+        style: {
+            colors: '#C0C0C0',
+            fontWeight: 'normal',
+            fontSize: '0.7em',
+        },
+        offsetX: -10,
+      }
+    }, 
     title:{
       text: 'COVID-19 CASES - BRAZIL',
       align: 'center',
       offsetY: 50,
       style:{
+        color: '#C0C0C0',
         fontWeight: 'normal',
         fontSize: '1.2em',
         fontFamily: 'sans-serif'
